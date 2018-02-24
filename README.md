@@ -20,7 +20,7 @@ Options:
 ```
 ## Like it?
 
-:star: [this repo](https://github.com/vasinkevych/scss-concat)
+:star: [this repo](https://github.com/vasinkevych/bundle-scss)
 
 ## License
 
