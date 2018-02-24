@@ -1,6 +1,5 @@
-#bundle-scss
+# bundle-scss
 Bundles all SCSS imports into a single file. Analise all scss imports inside each found by mask file and include.
-[![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
 
 ## Get started
 If you want to use `scss-bundle` globally
