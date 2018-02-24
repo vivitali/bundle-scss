@@ -1,0 +1,48 @@
+{
+  "name": "bundle-scss",
+  "version": "0.0.1",
+  "description": "Bundling SCSS files to one bundled file.",
+  "license": "MIT",
+  "main": "index.js",
+  "author": "Vitalii <vasinkevych@gmail.com> (https://github.com/vasinkevych)",
+  "bugs": "https://github.com/vasinkevych/bundle-scss/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vasinkevych/bundle-scss"
+  },
+  "scripts": {
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"./**/*.{ts, js}\"",
+    "bin": "tsc -t ES6 --moduleResolution node ./bin/bundle-scss.ts --outFile ./bin/bundle-scss",
+    "build": "tsc -t ES6 --module commonjs --moduleResolution node index.ts && npm run bin"
+  },
+  "bin": {
+    "bundle-scss":"./bin/bundle-scss"
+  },
+  "dependencies": {
+    "commander": "^2.14.1",
+    "globby": "^8.0.1"
+  },
+  "keywords": [
+    "scss",
+    "bundle",
+    "concatenate",
+    "concat",
+    "node",
+    "sass",
+    "join"
+  ],
+  "devDependencies": {
+    "@types/core-js": "^0.9.46",
+    "@types/globby": "^6.1.0",
+    "@types/node": "^9.4.6",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "core-js": "^2.5.3",
+    "mocha": "^5.0.1",
+    "prettier": "^1.10.2",
+    "typescript": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}
