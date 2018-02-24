@@ -15,7 +15,7 @@ concatenate multiple scss filas into one
 Options:
     -h, --help                   output usage information
     -V, --version                output the version number
-    -m, --mask <mask>            mask for files which has to be concatenate. Example \"./src/**/*.theme.scss\"  
+    -m, --mask <mask>            mask for files which have to be concatenate. Example \"./src/**/*.theme.scss\"  
     -m, --dest <dest>            Output file desination. Example \"./dist/themes.scss\"  
 ```
 ## Like it?
