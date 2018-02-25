@@ -1,5 +1,9 @@
 # bundle-scss
-Bundles all SCSS imports into a single file. Analise all scss imports inside each found by mask file and include.
+
+[![Build Status](https://travis-ci.org/vasinkevych/bundle-scss.svg?branch=master)](https://travis-ci.org/vasinkevych/bundle-scss)
+
+Bundles all SCSS imports into a single file.
+All imported files (e.g `variables`, `mixins`) will be added at the beginning
 
 ## Get started
 If you want to use `scss-bundle` globally
