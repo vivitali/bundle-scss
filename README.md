@@ -1,7 +1,8 @@
-# bundle-scss
-Bundles all SCSS imports into a single file. Analise all scss imports inside each found by mask file and include.
+Bundles all SCSS imports into a single file.
+All imported files (e.g `variables`, `mixins`) will be added at the beginning
 
 ## Get started
+# bundle-scss
 If you want to use `scss-bundle` globally
 ```sh
 $ npm i -D bundle-scss

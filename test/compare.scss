@@ -1,0 +1,11 @@
+$red: red;
+$blue: blue;
+
+
+.one-style {
+    color: $blue
+}@import '../variables'
+
+.other {
+ color: red
+}
