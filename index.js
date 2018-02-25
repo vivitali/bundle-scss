@@ -18,7 +18,7 @@ const getUniqueScss = (files) => {
     const uniqueArr = [...new Set(scssImports.map(el => el.path))];
     return [...uniqueArr, ...files];
 };
-function getImports(content, baseDir) {
+const getImports = (content, baseDir) => {
     const regex = /@import ['"]([^'"]+)['"];/g;
     let imports = [];
     let match;
@@ -29,8 +29,8 @@ function getImports(content, baseDir) {
         });
     }
     return imports;
-}
-function writeAsync(path, content) {
+};
+const writeAsync = (path, content) => {
     return new Promise((res, rej) => {
         fs_1.writeFile(path_1.resolve(path), content, error => {
             if (error) {
@@ -39,21 +39,21 @@ function writeAsync(path, content) {
             return res(content);
         });
     });
-}
-function defineExtension(filePath) {
+};
+const defineExtension = (filePath) => {
     const justScss = filePath + '.scss';
     if (isFile(justScss)) {
         return justScss;
     }
     console.error(`⛔ ⛔ ⛔ No file for module ${filePath}`);
-}
+};
 module.exports = (mask, dest) => {
     const fullPath = path_1.join(process.cwd());
     if (!mask || !mask.length) {
         console.error('⛔ ⛔ ⛔ Please provide the src for concat method');
     }
     const searchMask = Array.isArray(mask) ? mask : [mask];
-    globby(searchMask).then(paths => {
+    return globby(searchMask).then(paths => {
         const files = paths.map(file => path_1.join(fullPath, file));
         const unique = getUniqueScss(files);
         const buffers = unique.map(file => {
@@ -63,14 +63,16 @@ module.exports = (mask, dest) => {
         let utfFormat = decoder.write(buff);
         if (dest) {
             log(`⏳ ⏳ ⏳ Saving result to ${dest}...`);
-            writeAsync(dest, removeImports(utfFormat))
+            const utf = removeImports(utfFormat);
+            return writeAsync(dest, utf)
                 .then(res => {
+                console.log(utf, 'ffffffffffffffffffffffffff');
                 log(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
+                return utf;
             })
                 .catch(reason => {
                 log(`⛔ ⛔ ⛔\n${reason}`);
             });
-            return dest;
         }
         log('📁 Please provide destination option ');
     });
