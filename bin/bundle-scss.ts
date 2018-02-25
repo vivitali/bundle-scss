@@ -15,7 +15,8 @@ app
 
 if (app.mask && app.dest) {
   bundleScss(app.mask, app.dest);
-}
-else {
-  throw new Error('Please check options: -m, -d. \nLooks like some of them are not specified');
+} else {
+  throw new Error(
+    'Please check options: -m, -d. \nLooks like some of them are not specified'
+  );
 }

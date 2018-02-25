@@ -23,7 +23,7 @@ const getUniqueScss = (files: Array<string>) => {
   return [...uniqueArr, ...files];
 };
 
-function getImports(content: string, baseDir: string) {
+const getImports = (content: string, baseDir: string) => {
   const regex = /@import ['"]([^'"]+)['"];/g;
   let imports = [];
   let match;
@@ -35,9 +35,9 @@ function getImports(content: string, baseDir: string) {
   }
 
   return imports;
-}
+};
 
-function writeAsync(path: string, content: string) {
+const writeAsync = (path: string, content: string) => {
   return new Promise((res, rej) => {
     writeFile(resolve(path), content, error => {
       if (error) {
@@ -47,16 +47,16 @@ function writeAsync(path: string, content: string) {
       return res(content);
     });
   });
-}
+};
 
-function defineExtension(filePath: string) {
+const defineExtension = (filePath: string) => {
   const justScss = filePath + '.scss';
 
   if (isFile(justScss)) {
     return justScss;
   }
   console.error(`⛔ ⛔ ⛔ No file for module ${filePath}`);
-}
+};
 
 export = (mask: string[] | string, dest: string) => {
   const fullPath = join(process.cwd());
@@ -64,7 +64,7 @@ export = (mask: string[] | string, dest: string) => {
     console.error('⛔ ⛔ ⛔ Please provide the src for concat method');
   }
   const searchMask = Array.isArray(mask) ? mask : [mask];
-  globby(searchMask).then(paths => {
+  return globby(searchMask).then(paths => {
     const files = paths.map(file => join(fullPath, file));
 
     const unique = getUniqueScss(files);
@@ -76,14 +76,16 @@ export = (mask: string[] | string, dest: string) => {
 
     if (dest) {
       log(`⏳ ⏳ ⏳ Saving result to ${dest}...`);
-      writeAsync(dest, removeImports(utfFormat))
+      const utf = removeImports(utfFormat);
+      return writeAsync(dest, utf)
         .then(res => {
+          console.log(utf, 'ffffffffffffffffffffffffff')
           log(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
+          return utf;
         })
         .catch(reason => {
           log(`⛔ ⛔ ⛔\n${reason}`);
         });
-      return dest;
     }
     log('📁 Please provide destination option ');
   });
