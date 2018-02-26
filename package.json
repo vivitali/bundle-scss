@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "0.0.3",
+  "version": "0.3.0",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "index.js",
