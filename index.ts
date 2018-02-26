@@ -79,7 +79,6 @@ export = (mask: string[] | string, dest: string) => {
       const utf = removeImports(utfFormat);
       return writeAsync(dest, utf)
         .then(res => {
-          console.log(utf, 'ffffffffffffffffffffffffff')
           log(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
           return utf;
         })
