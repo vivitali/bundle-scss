@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 const app = require('commander');
-const cfg = require('../package.json');
-const bundleScss = require('../src/index');
+const cfg = require('../../package.json');
+const bundleScss = require('../index');
 app
     .version(cfg.version)
     .option('-d, --dest <dest>', 'destination of bundled file')

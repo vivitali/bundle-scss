@@ -3,7 +3,7 @@ import { resolve, join, dirname } from 'path';
 import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
 import { config } from './helpers/constants';
-import { Sort } from "./helpers/Sort";
+import { Sort } from './helpers/Sort';
 
 const decoder = new StringDecoder('utf8');
 const log = (info: Error | string) => console.log(info);
@@ -63,7 +63,11 @@ const defineExtension = (filePath: string) => {
   throw new Error(`⛔ ⛔ ⛔ No file for module ${filePath}`);
 };
 
-export = (mask: string[] | string, dest: string, sort:string[] = config.defaultPriority ) => {
+export = (
+  mask: string[] | string,
+  dest: string,
+  sort: string[] = config.defaultPriority
+) => {
   const fullPath = join(process.cwd());
   console.log(sort, '---------');
   const sortInstance = new Sort(sort);

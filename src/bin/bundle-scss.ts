@@ -3,15 +3,18 @@
 'use strict';
 
 const app = require('commander');
-const cfg = require('../package.json');
-const bundleScss = require('../src/index');
+const cfg = require('../../package.json');
+const bundleScss = require('../index');
 
 app
   .version(cfg.version)
   .option('-d, --dest <dest>', 'destination of bundled file')
   .option('-m, --mask <mask>', 'mask for files like ./src/**/*.theme.scss')
-  .option('-s, --sort <sort>', 'Optional Sort priority for files. ' +
-    'Default priority [\'theme-variable\', \'variable\', \'mixin\']')
+  .option(
+    '-s, --sort <sort>',
+    'Optional Sort priority for files. ' +
+      "Default priority ['theme-variable', 'variable', 'mixin']"
+  )
   .parse(process.argv);
 
 if (app.mask && app.dest) {
