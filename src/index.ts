@@ -69,8 +69,8 @@ export = (
   sort: string[] = config.defaultPriority
 ) => {
   const fullPath = join(process.cwd());
-  console.log(sort, '---------');
-  const sortInstance = new Sort(sort);
+  const sortOrder = Array.isArray(sort) ? sort : [sort];
+  const sortInstance = new Sort(sortOrder);
   if (!mask || !mask.length) {
     throw new Error('⛔ ⛔ ⛔ Please provide the src for concat method');
   }
@@ -79,9 +79,7 @@ export = (
     const files = paths.map(file => join(fullPath, file));
 
     const unique = getUniqueScss(files);
-    console.log(unique, '============');
     const sorted = sortInstance.sort(unique);
-    console.log(sorted, '============');
     const buffers = sorted.map(file => {
       return readFileSync(file);
     });

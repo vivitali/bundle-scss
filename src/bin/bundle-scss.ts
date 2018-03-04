@@ -12,7 +12,8 @@ app
   .option('-m, --mask <mask>', 'mask for files like ./src/**/*.theme.scss')
   .option(
     '-s, --sort <sort>',
-    'Optional Sort priority for files. ' +
+    'Optional. Sort priority for files. ' +
+      'Example: `variable` - will pass all variables at beginning' +
       "Default priority ['theme-variable', 'variable', 'mixin']"
   )
   .parse(process.argv);
