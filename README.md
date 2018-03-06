@@ -36,9 +36,30 @@ bundleScss(mask, dest, sort?)
 
 Where
     mask -  \"./src/**/*.theme.scss\", you may pass several definitions in Array
-    dest -   Output file desination. Array or string
+    dest -   Output file desination. Currently, output folder (like `.dist/`) should already exist. 
     sort -   Optional. Defines sort ordering. Default priority ['theme-variable', 'variable', 'mixin']"
 ```
+## Example usage
+
+```json
+//package.json
+{
+    "script": {
+      "themes": "bundle-scss -m \"./src/**/*.theme.scss\" -d \"./dist/themes.scss\""
+    }
+}
+```
+or 
+```json
+//package.json
+{
+    "script": {
+      "postbuild": "bundle-scss -m \"./src/**/*.theme.scss\" -d \"./dist/themes.scss\""
+    }
+}
+```
+
+
 ## Like it?
 
 :star: [this repo](https://github.com/vasinkevych/bundle-scss)
