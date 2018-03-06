@@ -24,8 +24,8 @@ Options:
     -m, --mask <mask>            mask for files which have to be concatenate. Example \"./src/**/*.theme.scss\". 
                                  You may pass several definitions in Array  
     -d, --dest <dest>            Output file desination. Example \"./dist/themes.scss\"  
-    -s, --sort <sort>            Output file desination.     
-                                 Example: `variable` - will pass all variables at beginning
+    -s, --sort <sort>            Optional. Sort priority.     
+                                 Example: `variable` - will pass all variables files at the beginning
                                  Default priority ['theme-variable', 'variable', 'mixin']"
   
 ```
