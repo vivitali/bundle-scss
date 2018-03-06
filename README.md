@@ -45,20 +45,12 @@ Where
 //package.json
 {
     "script": {
+      "postbuild": "npm run themes",
       "themes": "bundle-scss -m \"./src/**/*.theme.scss\" -d \"./dist/themes.scss\""
     }
 }
 ```
-or 
-```json
-//package.json
-{
-    "script": {
-      "postbuild": "bundle-scss -m \"./src/**/*.theme.scss\" -d \"./dist/themes.scss\""
-    }
-}
-```
-
+`postbuild` - have to specify post task related to your project
 
 ## Like it?
 
