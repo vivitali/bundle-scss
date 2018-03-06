@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Vitalii <vasinkevych@gmail.com> (https://github.com/vasinkevych)",
   "bugs": "https://github.com/vasinkevych/bundle-scss/issues",
   "repository": {
@@ -19,7 +19,7 @@
   "bin": {
     "bundle-scss": "./dist/bin/bundle-scss"
   },
-  "types": "dist/index.d.ts",
+  "types": "@types/index.d.ts",
   "dependencies": {
     "commander": "^2.14.1",
     "globby": "^8.0.1",

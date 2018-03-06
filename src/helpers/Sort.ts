@@ -28,7 +28,7 @@ export class Sort {
       // if true - place that names to the end
       return -1;
     }
-    return this.hash[bEl] - this.hash[aEl];
+    return this.hash[aEl] - this.hash[bEl];
   }
 
   public sort(sortable: Array<string>): Array<string> {

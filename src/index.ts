@@ -55,7 +55,7 @@ const writeAsync = (path: string, content: string) => {
 };
 
 const defineExtension = (filePath: string) => {
-  const justScss = filePath + '.scss';
+  const justScss = `${filePath}.${config.fileType}`;
 
   if (isFile(justScss)) {
     return justScss;
