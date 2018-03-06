@@ -1,3 +1,8 @@
+# 1.0.2  (2018-03-06)
+
+### Bugfix
+fixed links
+
 # 1.0.1  (2018-03-06)
 
 ### Bugfix
@@ -17,7 +22,7 @@ Update readme
 * fixed cross imports
 * fixed tests
 
-# 0.3.0  (2018-02-26)
+# 0.1.0  (2018-02-26)
 
 ### Feature
 * added CHANGELOG.md, update read.me, added tests

@@ -58,8 +58,8 @@ Where
 
 ## Other
 
-[Next Steps] (https://github.com/vasinkevych/bundle-scss/ROADMAP.md)  
-[Changelog] (https://github.com/vasinkevych/bundle-scss/CHANGELOG.md)  
+[Next Steps] (https://github.com/vasinkevych/bundle-scss/blob/master/ROADMAP.md)  
+[CHANGELOG] (https://github.com/vasinkevych/bundle-scss/blob/master/CHANGELOG.md)  
 
 ## License
 
