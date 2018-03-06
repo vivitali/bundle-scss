@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "index.js",
@@ -12,13 +12,14 @@
   },
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"./**/*.{ts, js}\"",
-    "bin": "tsc -t ES6 --moduleResolution node ./bin/bundle-scss.ts --outFile ./bin/bundle-scss",
-    "build": "tsc -t ES6 --module commonjs --moduleResolution node index.ts && npm run bin",
+    "bin": "tsc -t ES6 --moduleResolution node ./src/bin/bundle-scss.ts --outFile ./dist/bin/bundle-scss",
+    "build": "tsc -p . --newLine lf && npm run bin",
     "test": "npm run build && _mocha"
   },
   "bin": {
-    "bundle-scss": "./bin/bundle-scss"
+    "bundle-scss": "./dist/bin/bundle-scss"
   },
+  "types": "dist/index.d.ts",
   "dependencies": {
     "commander": "^2.14.1",
     "globby": "^8.0.1",

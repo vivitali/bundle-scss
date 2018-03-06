@@ -1,3 +1,17 @@
+# 1.0.0  (2018-03-04)
+
+### Feature
+* change build approach
+* added recursive search
+* added priority for style concatenating. 
+ You can specify it with `-s` or `--sort` in cli, or 3-d parameter from node.
+ Default priority `['theme-variable', 'variable', 'mixin']`
+* added @types
+
+### Bugfix
+* fixed cross imports
+* fixed tests
+
 # 0.3.0  (2018-02-26)
 
 ### Feature
