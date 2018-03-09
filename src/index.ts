@@ -1,67 +1,14 @@
-import { writeFile, statSync, readFileSync } from 'fs';
-import { resolve, join, dirname } from 'path';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
 import { config } from './helpers/constants';
 import { Sort } from './helpers/Sort';
+import { writeAsync } from './helpers/fs-utils';
+import { getUniqueScss, removeImports } from './helpers/file-content-utils';
+import { logger } from './helpers/logger';
 
 const decoder = new StringDecoder('utf8');
-const log = (info: Error | string) => console.log(info);
-const isFile = (f: string) => statSync(f).isFile();
-
-const removeImports = (content: string) =>
-  content.replace(config.sassImportRegex, '');
-
-const readSync = (filePath: string) => readFileSync(filePath, 'utf8');
-const getUniqueScss = (files: Array<string>) => {
-  const scssImports = files
-    .map(file => {
-      let baseDir = dirname(file);
-      return getImports(readSync(file), baseDir);
-    })
-    .reduce((acc, curr) => acc.concat(curr), []);
-  const allImports = [...scssImports, ...files];
-
-  return [...new Set(allImports)];
-};
-
-const getImports = (
-  content: string,
-  baseDir: string,
-  imports: Array<string> = []
-) => {
-  let match;
-  while ((match = config.sassImportRegex.exec(content)) !== null) {
-    const pathFile = defineExtension(join(baseDir, match[1]));
-    if (!imports.some(el => el === pathFile)) {
-      imports.push(pathFile);
-      getImports(readSync(pathFile), dirname(pathFile), imports);
-    }
-  }
-
-  return imports;
-};
-
-const writeAsync = (path: string, content: string) => {
-  return new Promise((res, rej) => {
-    writeFile(resolve(path), content, error => {
-      if (error) {
-        return rej(error);
-      }
-
-      return res(content);
-    });
-  });
-};
-
-const defineExtension = (filePath: string) => {
-  const justScss = `${filePath}.${config.fileType}`;
-
-  if (isFile(justScss)) {
-    return justScss;
-  }
-  throw new Error(`⛔ ⛔ ⛔ No file for module ${filePath}`);
-};
 
 export = (
   mask: string[] | string,
@@ -87,18 +34,18 @@ export = (
     let utfFormat = decoder.write(buff);
 
     if (dest) {
-      log(`⏳ ⏳ ⏳ Saving result to ${dest}...`);
+      logger(`⏳ ⏳ ⏳ Saving result to ${dest}...`);
       const utf = removeImports(utfFormat);
       return writeAsync(dest, utf)
         .then(() => {
-          log(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
+          logger(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
           return utf;
         })
         .catch(reason => {
-          log(`⛔ ⛔ ⛔\n${reason}`);
+          logger(`⛔ ⛔ ⛔\n${reason}`);
         });
     }
-    log('📁 Please provide destination option ');
+    logger('📁 Please provide destination option ');
     throw new Error('📁 Please provide destination option ');
   });
 };
