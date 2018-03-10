@@ -12,7 +12,7 @@
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitReturns": false,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "declaration": true,
     "declarationDir": "@types",
     "typeRoots": [

@@ -1,9 +1,10 @@
 # 1.1.0  (2018-03-09)
 
-* code refactor
 
 ### Feature
+* Added check if destination folder exist. Will create if not 
 * Added vulnerabilities testing
+* Code refactor
 
 # 1.0.2  (2018-03-06)
 

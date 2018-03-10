@@ -1,5 +1,6 @@
 export declare const config: {
-  defaultPriority: string[];
-  sassImportRegex: RegExp;
-  fileType: string;
+    defaultPriority: string[];
+    sassImportRegex: RegExp;
+    parseFilePathRegex: RegExp;
+    fileType: string;
 };

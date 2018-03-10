@@ -4,7 +4,11 @@ import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
 import { config } from './helpers/constants';
 import { Sort } from './helpers/Sort';
-import { writeAsync } from './helpers/fs-utils';
+import {
+  fullCurrentPath,
+  resolveDirDest,
+  writeAsync,
+} from './helpers/fs-utils';
 import { getUniqueScss, removeImports } from './helpers/file-content-utils';
 import { logger } from './helpers/logger';
 
@@ -15,15 +19,17 @@ export = (
   dest: string,
   sort: string[] = config.defaultPriority
 ) => {
-  const fullPath = join(process.cwd());
   const sortOrder = Array.isArray(sort) ? sort : [sort];
   const sortInstance = new Sort(sortOrder);
   if (!mask || !mask.length) {
     throw new Error('⛔ ⛔ ⛔ Please provide the src for concat method');
   }
   const searchMask = Array.isArray(mask) ? mask : [mask];
+
+  resolveDirDest(dest);
+
   return globby(searchMask).then(paths => {
-    const files = paths.map(file => join(fullPath, file));
+    const files = paths.map(file => join(fullCurrentPath(), file));
 
     const unique = getUniqueScss(files);
     const sorted = sortInstance.sort(unique);

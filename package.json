@@ -21,8 +21,10 @@
   },
   "types": "@types/index.d.ts",
   "dependencies": {
+    "@types/make-dir": "^1.0.3",
     "commander": "^2.14.1",
     "globby": "^8.0.1",
+    "make-dir": "^1.2.0",
     "rimraf": "^2.6.2"
   },
   "keywords": [
