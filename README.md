@@ -6,8 +6,8 @@
 [![devDependencies Status](https://david-dm.org/vasinkevych/bundle-scss/dev-status.svg)](https://david-dm.org/vasinkevych/bundle-scss?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/vasinkevych/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vasinkevych/bundle-scss?targetFile=package.json)
 ##
-Find scss file by mask and bundles this scss files and scss imports into a single file. Recursive search for all `@import ...`.
-All imported files (e.g `variables`, `mixins`) will be added at the beginning by default priority. 
+Find scss files by mask and bundles into a single file. Recursive search for all `@import ...`.
+All imported files (e.g `variables`, `mixins`) will be added at the beginning by default priority 
 Or you may specify your own priority.
 
 ## Get started
