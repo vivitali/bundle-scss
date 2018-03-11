@@ -22,13 +22,12 @@ export const getImports = (
   baseDir: string,
   imports: Array<string> = []
 ) => {
+  const regex = /@import ['"]([^'"]+)['"];/g;
   let match;
-  while ((match = mainConst.sassImportRegex.exec(content)) !== null) {
+  while ((match = regex.exec(content)) !== null) {
     const pathFile = defineExtension(join(baseDir, match[1]));
-    if (!imports.some(el => el === pathFile)) {
-      imports.push(pathFile);
-      getImports(readSync(pathFile), dirname(pathFile), imports);
-    }
+    imports.push(pathFile);
+    getImports(readSync(pathFile), dirname(pathFile), imports);
   }
 
   return imports;
