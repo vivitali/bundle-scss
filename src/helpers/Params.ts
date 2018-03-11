@@ -9,7 +9,7 @@ export class Params {
   private dest: string;
   private sort: Array<string> | string;
   private packageConf: {
-    bundleScss?: IParams;
+    bundleStyle?: IParams;
   };
   private bundleConf: IParams;
   private mergedParams: IParams;
@@ -41,8 +41,8 @@ export class Params {
   }
 
   private mergeParam(): IParams {
-    const packageConf = this.packageConf.bundleScss
-      ? this.packageConf.bundleScss
+    const packageConf = this.packageConf.bundleStyle
+      ? this.packageConf.bundleStyle
       : {};
     return {
       mask: this.mask,
