@@ -5,8 +5,9 @@
 [![dependencies Status](https://david-dm.org/vasinkevych/bundle-scss.svg)](https://david-dm.org/vasinkevych/bundle-scss)
 [![devDependencies Status](https://david-dm.org/vasinkevych/bundle-scss/dev-status.svg)](https://david-dm.org/vasinkevych/bundle-scss?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/vasinkevych/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vasinkevych/bundle-scss?targetFile=package.json)
-Bundles all SCSS imports into a single file. Recursive search for all `@import ...`.
-All imported files (e.g `variables`, `mixins`) will be added at the beginning by default priority
+Find scss file by mask and bundles this scss files and scss imports into a single file. Recursive search for all `@import ...`.
+All imported files (e.g `variables`, `mixins`) will be added at the beginning by default priority. 
+Or you may specify your own priority.
 
 ## Get started
 If you want to use `bundle-scss`
@@ -28,6 +29,7 @@ Options:
     -s, --sort <sort>            Optional. Sort priority.     
                                  Example: `variable` - will pass all variables files at the beginning
                                  Default priority ['theme-variable', 'variable', 'mixin']"
+    -c, --config                 if true parameter should be specified in `package-json` or `.bundle-style-conf.json`    
   
 ```
 ## Non-CLI Usage
@@ -37,10 +39,12 @@ bundleScss(mask, dest, sort?)
 
 Where
     mask -  \"./src/**/*.theme.scss\", you may pass several definitions in Array
-    dest -   Output file desination. Currently, output folder (like `.dist/`) should already exist. 
+    dest -   Output file desination. `.dist/dist/theme.scss`. `.dist/dist/` will be created if it not exist 
     sort -   Optional. Defines sort ordering. Default priority ['theme-variable', 'variable', 'mixin']"
 ```
 ## Example usage
+
+### With inline parameters
 
 ```json
 //package.json
@@ -53,6 +57,30 @@ Where
 ```
 `postbuild` - have to specify post task related to your project
 
+### Specify params in separate file
+`package.json` example
+```json
+
+{
+    "script": {
+      "postbuild": "npm run themes",
+      "themes": "bundle-scss --config"
+    },
+   "bundleScss": {
+     "dest": "./des/themes.scss",
+     "mask": "./src/**/*.theme.scss",
+     "sort": ["first-priority", "second-priority-variabl", "mixin"] // part of filenames
+   }
+}
+```
+or you may specify it in separate file `.bundle-style-conf.json`
+```json
+  {
+     "dest": "./des/themes.scss",
+     "mask": "./src/**/*.theme.scss",
+     "sort": ["first-priority", "second-variabl", "mixin"] // part of filenames
+   }
+```
 ## Like it?
 
 :star: [this repo](https://github.com/vasinkevych/bundle-scss)

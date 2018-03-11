@@ -7,6 +7,7 @@ import { cwDir, resolveDirDest, writeAsync } from './helpers/fs-utils';
 import { getUniqueScss, removeImports } from './helpers/file-content-utils';
 import { logger } from './helpers/logger';
 import { Params } from './helpers/Params';
+import { IParams } from './interface/IParams';
 
 const decoder = new StringDecoder('utf8');
 
@@ -16,7 +17,7 @@ export = (
   sort: string[] | string,
   config: boolean
 ) => {
-  const params = new Params(mask, dest, sort, config).param;
+  const params: IParams = new Params(mask, dest, sort, config).param;
 
   if (!params.mask || !params.mask.length) {
     throw new Error('⛔ ⛔ ⛔ Please provide the src for concat method');
