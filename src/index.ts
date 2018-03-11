@@ -2,13 +2,9 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
-import { config } from './helpers/constants';
+import { mainConst } from './helpers/constants';
 import { Sort } from './helpers/Sort';
-import {
-  fullCurrentPath,
-  resolveDirDest,
-  writeAsync,
-} from './helpers/fs-utils';
+import { cwDir, resolveDirDest, writeAsync } from './helpers/fs-utils';
 import { getUniqueScss, removeImports } from './helpers/file-content-utils';
 import { logger } from './helpers/logger';
 
@@ -17,7 +13,7 @@ const decoder = new StringDecoder('utf8');
 export = (
   mask: string[] | string,
   dest: string,
-  sort: string[] = config.defaultPriority
+  sort: string[] = mainConst.defaultPriority
 ) => {
   const sortOrder = Array.isArray(sort) ? sort : [sort];
   const sortInstance = new Sort(sortOrder);
@@ -29,7 +25,7 @@ export = (
   resolveDirDest(dest);
 
   return globby(searchMask).then(paths => {
-    const files = paths.map(file => join(fullCurrentPath(), file));
+    const files = paths.map(file => join(cwDir(), file));
 
     const unique = getUniqueScss(files);
     const sorted = sortInstance.sort(unique);

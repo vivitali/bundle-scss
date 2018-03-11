@@ -13,7 +13,7 @@ app
     Default priority ['theme-variable', 'variable', 'mixin']`
   )
   .option(
-    '-c, --config',
+    '-c, --config<config>',
     'true or false, try to get params from package.json or bundle-style.json'
   )
   .parse(process.argv);

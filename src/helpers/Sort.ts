@@ -1,7 +1,3 @@
-interface IHash {
-  [key: string]: number;
-}
-
 export class Sort {
   public patternArr: Array<string>;
   public hash: any;

@@ -1,9 +1,9 @@
-import { config } from './constants';
+import { mainConst } from './constants';
 import { defineExtension, readSync } from './fs-utils';
 import { dirname, join } from 'path';
 
 export const removeImports = (content: string) =>
-  content.replace(config.sassImportRegex, '');
+  content.replace(mainConst.sassImportRegex, '');
 
 export const getUniqueScss = (files: Array<string>) => {
   const scssImports = files
@@ -23,7 +23,7 @@ export const getImports = (
   imports: Array<string> = []
 ) => {
   let match;
-  while ((match = config.sassImportRegex.exec(content)) !== null) {
+  while ((match = mainConst.sassImportRegex.exec(content)) !== null) {
     const pathFile = defineExtension(join(baseDir, match[1]));
     if (!imports.some(el => el === pathFile)) {
       imports.push(pathFile);

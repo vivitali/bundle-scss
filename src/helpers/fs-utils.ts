@@ -1,21 +1,27 @@
 import { writeFile, statSync, readFileSync, existsSync } from 'fs';
-import { join, resolve } from 'path';
+import { resolve } from 'path';
 import * as mkDir from 'make-dir';
-import { config } from './constants';
+import { mainConst } from './constants';
 import { logger } from './logger';
 
 export const isFile = (f: string) => statSync(f).isFile();
 
-export const readSync = (filePath: string) => readFileSync(filePath, 'utf8');
+export const readSync = (filePath: string) => {
+  try {
+    return readFileSync(filePath, 'utf8');
+  } catch (err) {
+    logger(err);
+  }
+};
 
-export const fullCurrentPath = () => join(process.cwd());
+export const cwDir = () => process.cwd();
 
 /*
 * parse dir destination from des param crete folder if it doesn't exixt
 * @param fileDest {string} - result file destination
 */
 export const resolveDirDest = (fileDest: string) => {
-  const path = config.parseFilePathRegex.exec(fileDest);
+  const path = mainConst.parseFilePathRegex.exec(fileDest);
 
   if (!existsSync(path[0])) {
     try {
@@ -52,7 +58,7 @@ export const writeAsync = (path: string, content: string) => {
 * @return filePath with appropriate extension `scss` by efault
 * */
 export const defineExtension = (filePath: string) => {
-  const justScss = `${filePath}.${config.fileType}`;
+  const justScss = `${filePath}.${mainConst.fileType}`;
 
   if (isFile(justScss)) {
     return justScss;
