@@ -4,7 +4,7 @@ import * as mkDir from 'make-dir';
 import { mainConst } from './constants';
 import { logger } from './logger';
 
-export const isFile = (f: string) => statSync(f).isFile();
+export const isFile = (f: string) => existsSync(f) && statSync(f).isFile();
 
 export const readSync = (filePath: string) => {
   try {
@@ -34,6 +34,7 @@ export const resolveDirDest = (fileDest: string) => {
     logger(`${path[0]} - already exist`);
   }
 };
+
 /*
 * write result into dest file
 * @param path {string} - output file

@@ -1,3 +1,4 @@
+import { IParams } from '../interface/IParams';
 export declare class Params {
   private mask;
   private dest;
@@ -7,7 +8,7 @@ export declare class Params {
   private mergedParams;
   constructor(
     mask: Array<string> | string,
-    dest: Array<string> | string,
+    dest: string,
     sort: Array<string> | string,
     config: boolean
   );

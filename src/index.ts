@@ -2,33 +2,35 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
-import { mainConst } from './helpers/constants';
 import { Sort } from './helpers/Sort';
 import { cwDir, resolveDirDest, writeAsync } from './helpers/fs-utils';
 import { getUniqueScss, removeImports } from './helpers/file-content-utils';
 import { logger } from './helpers/logger';
+import { Params } from './helpers/Params';
 
 const decoder = new StringDecoder('utf8');
 
 export = (
   mask: string[] | string,
   dest: string,
-  sort: string[] = mainConst.defaultPriority
+  sort: string[] | string,
+  config: boolean
 ) => {
-  const sortOrder = Array.isArray(sort) ? sort : [sort];
-  const sortInstance = new Sort(sortOrder);
-  if (!mask || !mask.length) {
+  const params = new Params(mask, dest, sort, config).param;
+
+  if (!params.mask || !params.mask.length) {
     throw new Error('⛔ ⛔ ⛔ Please provide the src for concat method');
   }
-  const searchMask = Array.isArray(mask) ? mask : [mask];
 
-  resolveDirDest(dest);
+  resolveDirDest(params.dest);
+
+  const searchMask = Array.isArray(params.mask) ? params.mask : [params.mask];
 
   return globby(searchMask).then(paths => {
     const files = paths.map(file => join(cwDir(), file));
 
     const unique = getUniqueScss(files);
-    const sorted = sortInstance.sort(unique);
+    const sorted = new Sort(params.sort).sort(unique);
     const buffers = sorted.map(file => {
       return readFileSync(file);
     });
@@ -36,7 +38,7 @@ export = (
     let utfFormat = decoder.write(buff);
 
     if (dest) {
-      logger(`⏳ ⏳ ⏳ Saving result to ${dest}...`);
+      logger(`⏳ ⏳ ⏳ Saving result to ${dest}  ...`);
       const utf = removeImports(utfFormat);
       return writeAsync(dest, utf)
         .then(() => {

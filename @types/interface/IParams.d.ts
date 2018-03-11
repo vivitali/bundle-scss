@@ -1,5 +1,5 @@
-interface IParams {
-    mask: Array<string> | string;
-    dest: Array<string> | string;
-    sort?: Array<string> | string;
+export interface IParams {
+  mask: Array<string> | string;
+  dest: string;
+  sort?: Array<string> | string;
 }

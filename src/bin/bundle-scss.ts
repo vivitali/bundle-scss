@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+'use strict';
+
 const app = require('commander');
 const cfg = require('../../package.json');
 const bundleScss = require('../index');
@@ -13,7 +17,7 @@ app
     Default priority ['theme-variable', 'variable', 'mixin']`
   )
   .option(
-    '-c, --config<config>',
+    '-c, --config',
     'true or false, try to get params from package.json or bundle-style.json'
   )
   .parse(process.argv);

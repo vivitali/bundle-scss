@@ -1,11 +1,12 @@
-import { cwDir, readSync } from './fs-utils';
+import { cwDir, isFile, readSync } from './fs-utils';
 import { join } from 'path';
 import { mainConst } from './constants';
 import { logger } from './logger';
+import { IParams } from '../interface/IParams';
 
 export class Params {
   private mask: Array<string> | string;
-  private dest: Array<string> | string;
+  private dest: string;
   private sort: Array<string> | string;
   private packageConf: {
     bundleScss?: IParams;
@@ -15,7 +16,7 @@ export class Params {
 
   constructor(
     mask: Array<string> | string,
-    dest: Array<string> | string,
+    dest: string,
     sort: Array<string> | string,
     config: boolean
   ) {
@@ -32,10 +33,8 @@ export class Params {
   }
 
   private readJson(filePath) {
-    if (filePath) {
-      const content = JSON.parse(readSync(filePath));
-      console.warn(content, '-+-+-+-+_-+-+');
-      return content;
+    if (isFile(filePath)) {
+      return JSON.parse(readSync(filePath));
     }
     logger(`${filePath} not found`);
     return {};
