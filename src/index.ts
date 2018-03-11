@@ -38,12 +38,12 @@ export = (
     const buff = Buffer.concat(buffers);
     let utfFormat = decoder.write(buff);
 
-    if (dest) {
-      logger(`⏳ ⏳ ⏳ Saving result to ${dest}  ...`);
+    if (params.dest) {
+      logger(`⏳ ⏳ ⏳ Saving result to ${params.dest}  ...`);
       const utf = removeImports(utfFormat);
-      return writeAsync(dest, utf)
+      return writeAsync(params.dest, utf)
         .then(() => {
-          logger(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${dest}`);
+          logger(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${params.dest}`);
           return utf;
         })
         .catch(reason => {
