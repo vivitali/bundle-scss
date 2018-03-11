@@ -32,7 +32,7 @@ export class Params {
     this.mergedParams = this.mergeParam();
   }
 
-  private readJson(filePath) {
+  private readJson(filePath: string) {
     if (isFile(filePath)) {
       return JSON.parse(readSync(filePath));
     }
