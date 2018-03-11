@@ -1,3 +1,8 @@
+# 1.1.2  (2018-03-11)
+
+### Bugfix
+* fixed issue with recursive search 
+
 # 1.1.1  (2018-03-11)
 
 ### Bugfix
