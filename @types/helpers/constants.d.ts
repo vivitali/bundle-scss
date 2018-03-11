@@ -1,5 +1,8 @@
-export declare const config: {
-    defaultPriority: string[];
-    sassImportRegex: RegExp;
-    fileType: string;
+export declare const mainConst: {
+  defaultPriority: string[];
+  sassImportRegex: RegExp;
+  parseFilePathRegex: RegExp;
+  fileType: string;
+  packageJsonFile: string;
+  bundleConfFile: string;
 };

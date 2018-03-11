@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -21,8 +21,10 @@
   },
   "types": "@types/index.d.ts",
   "dependencies": {
+    "@types/make-dir": "^1.0.3",
     "commander": "^2.14.1",
     "globby": "^8.0.1",
+    "make-dir": "^1.2.0",
     "rimraf": "^2.6.2"
   },
   "keywords": [
@@ -32,7 +34,9 @@
     "concat",
     "node",
     "sass",
-    "join"
+    "join",
+    "themes",
+    "build themes separately"
   ],
   "devDependencies": {
     "@types/core-js": "^0.9.46",

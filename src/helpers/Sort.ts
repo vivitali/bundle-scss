@@ -1,14 +1,12 @@
-interface IHash {
-  [key: string]: number;
-}
+import { IHash } from '../interface/IHash';
 
 export class Sort {
-  public patternArr: Array<string>;
+  public pattern: Array<string>;
   public hash: any;
 
-  constructor(pattern: Array<string>) {
-    this.patternArr = pattern;
-    this.hash = pattern.reduce(
+  constructor(pattern: Array<string> | string) {
+    this.pattern = Array.isArray(pattern) ? pattern : [pattern];
+    this.hash = this.pattern.reduce(
       (acc: IHash, item: string, i) => {
         acc[item] = i;
         return acc as IHash;
@@ -18,8 +16,8 @@ export class Sort {
   }
 
   private comparator(a: string, b: string) {
-    const aEl = this.patternArr.find(el => a.includes(el));
-    const bEl = this.patternArr.find(el => b.includes(el));
+    const aEl = this.pattern.find(el => a.includes(el));
+    const bEl = this.pattern.find(el => b.includes(el));
     if (!(aEl in this.hash)) {
       // checks if name is not in the pattern
       return 1;

@@ -1,12 +1,19 @@
+# 1.1.0  (2018-03-09)
+
+### Feature
+* Added check if destination folder exist. Will create if not 
+* Added vulnerabilities testing
+* Code refactor
+
 # 1.0.2  (2018-03-06)
 
 ### Bugfix
-fixed links
+* Fixed links
 
 # 1.0.1  (2018-03-06)
 
 ### Bugfix
-Update readme
+* Update readme
 
 # 1.0.0  (2018-03-04)
 

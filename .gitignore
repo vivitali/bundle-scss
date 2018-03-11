@@ -66,3 +66,4 @@ typings/
 .idea/
 package-lock.json
 test/result.scss
+/.npmrc
