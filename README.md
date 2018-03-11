@@ -29,7 +29,7 @@ Options:
     -s, --sort <sort>            Optional. Sort priority.     
                                  Example: `variable` - will pass all variables files at the beginning
                                  Default priority ['theme-variable', 'variable', 'mixin']"
-    -c, --config                 if true parameter should be specified in `package-json` or `.bundle-style-conf.json`    
+    -c, --config                 Shows that parameters `mask`, `dest`, `sort`(optional) should be specified in `package-json` or `.bundle-style-conf.json`    
   
 ```
 ## Non-CLI Usage
@@ -39,8 +39,8 @@ bundleScss(mask, dest, sort?)
 
 Where
     mask -  \"./src/**/*.theme.scss\", you may pass several definitions in Array
-    dest -   Output file desination. `.dist/dist/theme.scss`. `.dist/dist/` will be created if it not exist 
-    sort -   Optional. Defines sort ordering. Default priority ['theme-variable', 'variable', 'mixin']"
+    dest -  Output file desination. `.dist/dist/theme.scss`. `.dist/dist/` will be created, if it not exist 
+    sort -  Optional. Defines sort ordering. Default priority ['theme-variable', 'variable', 'mixin']"
 ```
 ## Example usage
 
