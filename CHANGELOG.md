@@ -1,3 +1,13 @@
+# 1.1.4  (2018-03-11)
+
+### Bugfix
+* fixed issue with `nodejs`
+
+# 1.1.3  (2018-03-11)
+
+### Bugfix
+* add fix for old browsers 
+
 # 1.1.2  (2018-03-11)
 
 ### Bugfix
