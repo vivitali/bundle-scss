@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "test": "npm run build && _mocha"
   },
   "bin": {
-    "bundle-scss": "./dist/bin/bundle-scss"
+    "bundle-scss": "./dist/bin/bundle-scss.js"
   },
   "types": "@types/index.d.ts",
   "dependencies": {
