@@ -1,3 +1,8 @@
+# 1.2.0  (2018-03-14)
+
+### Bugfix
+*  fixed cli issue for unix system
+
 # 1.2.0-alpha.0  (2018-03-14)
 
 ### Bugfix
