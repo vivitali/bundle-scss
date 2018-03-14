@@ -1,3 +1,8 @@
+# 1.2.0-alpha.0  (2018-03-14)
+
+### Bugfix
+*  checking`nodejs`
+
 # 1.1.4  (2018-03-11)
 
 ### Bugfix
