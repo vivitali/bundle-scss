@@ -19,7 +19,7 @@ $ npm i -D bundle-scss
 ```sh
 Usage: bundle-scss [options]
 
-concatenate multiple scss filas into one
+Concatenate multiple scss files into one
 
 Options:
     -h, --help                   output usage information
@@ -48,7 +48,7 @@ Where
 ### With inline parameters
 
 ```json
-//package.json
+//package.json scripts
 {
     "script": {
       "postbuild": "npm run themes",
