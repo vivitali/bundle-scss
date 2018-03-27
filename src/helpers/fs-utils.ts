@@ -17,7 +17,7 @@ export const readSync = (filePath: string) => {
 export const cwDir = () => process.cwd();
 
 /*
-* parse dir destination from des param crete folder if it doesn't exixt
+* parse dir destination from des param crete folder if it doesn't exist
 * @param fileDest {string} - result file destination
 */
 export const resolveDirDest = (fileDest: string) => {
@@ -54,15 +54,24 @@ export const writeAsync = (path: string, content: string) => {
 };
 
 /*
+* get File type from string
+* @param fileName {string}
+* @return fileType {string}
+* */
+export const fileType = (fileName: string): string =>
+  fileName.substring(fileName.lastIndexOf('.') + 1, fileName.length);
+
+/*
 * attach extension to fileName and check if it exist or trow error
 * @param filePath {string} - file path generated from sass `@import`
-* @return filePath with appropriate extension `scss` by efault
+* @param fileExtension {string} - file extension
+* @return filePath with appropriate extension `scss` by default
 * */
-export const defineExtension = (filePath: string) => {
-  const justScss = `${filePath}.${mainConst.fileType}`;
+export const defineExtension = (filePath: string, fileExtension: string) => {
+  const file = `${filePath}.${fileExtension}`;
 
-  if (isFile(justScss)) {
-    return justScss;
+  if (isFile(file)) {
+    return file;
   }
-  throw new Error(`⛔ ⛔ ⛔ No file for module ${filePath}`);
+  throw new Error(`No file for module ${filePath}`);
 };

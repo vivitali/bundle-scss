@@ -1,3 +1,10 @@
+# 1.3.0  (2018-03-27)
+
+### Features
+*  added supporting `sass` files
+*  improved logger
+*  added file extension checking
+
 # 1.2.1  (2018-03-14)
 
 ### Bugfix

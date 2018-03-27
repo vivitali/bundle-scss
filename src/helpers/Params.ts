@@ -1,4 +1,4 @@
-import { cwDir, isFile, readSync } from './fs-utils';
+import { cwDir, fileType, isFile, readSync } from './fs-utils';
 import { join } from 'path';
 import { mainConst } from './constants';
 import { logger } from './logger';
@@ -32,8 +32,16 @@ export class Params {
     this.mergedParams = this.mergeParam();
   }
 
+  compareOutputInputExtensions(param: IParams): boolean {
+    const maskExtension = Array.isArray(param.mask)
+      ? param.mask.map(el => fileType(el))
+      : [fileType(param.mask)];
+    return maskExtension.every(el => el === fileType(param.dest));
+  }
+
   private readJson(filePath: string) {
     if (isFile(filePath)) {
+      logger(`Reading params from ${filePath}`);
       return JSON.parse(readSync(filePath));
     }
     logger(`${filePath} not found`);
@@ -44,13 +52,17 @@ export class Params {
     const packageConf = this.packageConf.bundleStyle
       ? this.packageConf.bundleStyle
       : {};
-    return {
+    const param = {
       mask: this.mask,
       dest: this.dest,
       sort: this.sort,
       ...packageConf,
       ...this.bundleConf,
     };
+    if (!this.compareOutputInputExtensions(param)) {
+      logger('File extensions mask and dest should be the same');
+    }
+    return param;
   }
 
   get param() {

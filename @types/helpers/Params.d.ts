@@ -12,6 +12,7 @@ export declare class Params {
     sort: Array<string> | string,
     config: boolean
   );
+  compareOutputInputExtensions(param: IParams): boolean;
   private readJson(filePath);
   private mergeParam();
   readonly param: IParams;

@@ -3,8 +3,16 @@ import { join } from 'path';
 import * as globby from 'globby';
 import { StringDecoder } from 'string_decoder';
 import { Sort } from './helpers/Sort';
-import { cwDir, resolveDirDest, writeAsync } from './helpers/fs-utils';
-import { getUniqueScss, removeImports } from './helpers/file-content-utils';
+import {
+  cwDir,
+  fileType,
+  resolveDirDest,
+  writeAsync,
+} from './helpers/fs-utils';
+import {
+  getUniqueStyleFiles,
+  removeImports,
+} from './helpers/file-content-utils';
 import { logger } from './helpers/logger';
 import { Params } from './helpers/Params';
 import { IParams } from './interface/IParams';
@@ -20,7 +28,7 @@ export = (
   const params: IParams = new Params(mask, dest, sort, config).param;
 
   if (!params.mask || !params.mask.length) {
-    throw new Error('⛔ ⛔ ⛔ Please provide the src for concat method');
+    throw new Error('Please provide the src for concat method');
   }
 
   resolveDirDest(params.dest);
@@ -29,8 +37,8 @@ export = (
 
   return globby(searchMask).then(paths => {
     const files = paths.map(file => join(cwDir(), file));
-
-    const unique = getUniqueScss(files);
+    const fileExtension = fileType(params.dest);
+    const unique = getUniqueStyleFiles(files, fileExtension);
     const sorted = new Sort(params.sort).sort(unique);
     const buffers = sorted.map(file => {
       return readFileSync(file);
@@ -39,18 +47,18 @@ export = (
     let utfFormat = decoder.write(buff);
 
     if (params.dest) {
-      logger(`⏳ ⏳ ⏳ Saving result to ${params.dest}  ...`);
-      const utf = removeImports(utfFormat);
+      logger(`Saving result to ${params.dest}...`);
+      const utf = removeImports(utfFormat, fileExtension);
       return writeAsync(params.dest, utf)
         .then(() => {
-          logger(`🚀 🚀 🚀 SAVED SUCCESSFULLY \nPlease check ${params.dest}`);
+          logger(`SAVED SUCCESSFULLY! Please check ${params.dest}`);
           return utf;
         })
         .catch(reason => {
-          logger(`⛔ ⛔ ⛔\n${reason}`);
+          logger(`\n${reason}`);
         });
     }
-    logger('📁 Please provide destination option ');
-    throw new Error('📁 Please provide destination option ');
+    logger('Please provide destination option');
+    throw new Error('Please provide destination option');
   });
 };
