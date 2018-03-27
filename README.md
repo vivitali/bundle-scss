@@ -83,7 +83,7 @@ or `.bundle-style-conf.json` example
    }
 ```
 
-##SASS supporting
+## SASS supporting
 Use the same config with `sass` file extesions instead of `scss` 
 ## Like it?
 
