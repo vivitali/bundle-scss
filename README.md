@@ -1,4 +1,4 @@
-# bundle-scss
+# bundle-scss (sass is supported!)
 
 [![Build Status](https://travis-ci.org/vasinkevych/bundle-scss.svg?branch=master)](https://travis-ci.org/vasinkevych/bundle-scss)
 [![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
@@ -82,6 +82,9 @@ or `.bundle-style-conf.json` example
      "sort": ["first-priority", "second-priority", "mixin"] // part of filenames
    }
 ```
+
+##SASS supporting
+Use the same config with `sass` file extesions instead of `scss` 
 ## Like it?
 
 :star: [this repo](https://github.com/vasinkevych/bundle-scss)
