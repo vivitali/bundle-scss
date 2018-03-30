@@ -1,4 +1,4 @@
-# bundle-scss
+# bundle-scss (sass is supported!)
 
 [![Build Status](https://travis-ci.org/vasinkevych/bundle-scss.svg?branch=master)](https://travis-ci.org/vasinkevych/bundle-scss)
 [![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
@@ -6,12 +6,9 @@
 [![devDependencies Status](https://david-dm.org/vasinkevych/bundle-scss/dev-status.svg)](https://david-dm.org/vasinkevych/bundle-scss?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/vasinkevych/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vasinkevych/bundle-scss?targetFile=package.json)
 ##
-Find `scss` / `sass` files by mask and bundles into a single file. Recursive search for all `@import ...`.
+Find scss files by mask and bundles into a single file. Recursive search for all `@import ...`.
 All imported files (e.g `variables`, `mixins`) will be added at the beginning by default priority 
 Or you may specify your own priority.
-
-## SASS supporting
-Use the same config with `sass` file extesions instead of `scss` 
 
 ## Get started
 If you want to use `bundle-scss`
@@ -22,7 +19,7 @@ $ npm i -D bundle-scss
 ```sh
 Usage: bundle-scss [options]
 
-Concatenate multiple `scss` / `sass` files into one
+Concatenate multiple scss files into one
 
 Options:
     -h, --help                   output usage information
@@ -85,6 +82,9 @@ or `.bundle-style-conf.json` example
      "sort": ["first-priority", "second-priority", "mixin"] // part of filenames
    }
 ```
+
+## SASS supporting
+Use the same config with `sass` file extesions instead of `scss` 
 ## Like it?
 
 :star: [this repo](https://github.com/vasinkevych/bundle-scss)
