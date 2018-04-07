@@ -1,3 +1,13 @@
+# 1.3.2  (2018-03-30)
+
+### Updates
+*  revert update dependencies
+
+# 1.3.1  (2018-03-27)
+
+### Updates
+*  update dependencies
+
 # 1.3.0  (2018-03-27)
 
 ### Features
