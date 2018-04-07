@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -37,7 +37,9 @@
     "sass",
     "join",
     "themes",
-    "build themes separately"
+    "build themes separately",
+    "recursive concatenate sass",
+    "recursive concatenate scss"
   ],
   "devDependencies": {
     "@types/core-js": "^0.9.46",

@@ -1,3 +1,8 @@
+# 1.3.3  (2018-03-31)
+
+### Bugfix
+*  Fix issue with wrong input for sass [More there](https://github.com/vasinkevych/bundle-scss/issues/12)
+
 # 1.3.2  (2018-03-30)
 
 ### Updates

@@ -30,9 +30,7 @@ export const getImports = (
   imports: Array<string> = []
 ) => {
   const regex =
-    fileExtension === 'scss'
-      ? /@import ['"]([^'"]+)['"];/g
-      : /@import ['"]([^'"]+)['"]/g;
+    fileExtension === 'scss' ? /@import ['"]([^'"]+)['"];/g : /@import (\S+)/g;
   let match;
   while ((match = regex.exec(content)) !== null) {
     const pathFile = defineExtension(join(baseDir, match[1]), fileExtension);
