@@ -13,7 +13,7 @@ export declare class Params {
     config: boolean
   );
   compareOutputInputExtensions(param: IParams): boolean;
-  private readJson(filePath);
-  private mergeParam();
+  private readJson;
+  private mergeParam;
   readonly param: IParams;
 }
