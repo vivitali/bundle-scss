@@ -46,15 +46,15 @@
     "recursive concatenate scss"
   ],
   "devDependencies": {
-    "@types/core-js": "^2.5.0",
-    "@types/globby": "^8.0.0",
-    "@types/node": "^10.5.0",
+    "@types/core-js": "2.5.0",
+    "@types/globby": "8.0.0",
+    "@types/node": "10.5.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "core-js": "^2.5.7",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.6",
-    "typescript": "^2.9.2"
+    "babel-preset-env": "1.7.0",
+    "core-js": "2.5.7",
+    "mocha": "5.2.0",
+    "prettier": "1.13.6",
+    "typescript": "2.9.2"
   },
   "engines": {
     "node": ">=6"
