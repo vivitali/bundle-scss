@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"./**/*.{ts, js}\"",
     "bin": "tsc -t ES6 --moduleResolution node ./src/bin/bundle-scss.ts --outFile ./dist/bin/bundle-scss",
-    "build": "tsc -p . --newLine lf && npm run bin",
+    "build": "tsc -p . --newLine lf && npm run bin && npm run prettier",
     "test": "npm run build && _mocha"
   },
   "bin": {
@@ -25,7 +25,7 @@
     "commander": "^2.14.1",
     "fancy-log": "^1.3.2",
     "globby": "^8.0.1",
-    "make-dir": "^1.2.0",
+    "make-dir": "^1.3.0",
     "rimraf": "^2.6.2"
   },
   "keywords": [
@@ -39,18 +39,22 @@
     "themes",
     "build themes separately",
     "recursive concatenate sass",
+    "angular 6+",
+    "angularjs",
+    "ng-packagr build themes",
+    "react",
     "recursive concatenate scss"
   ],
   "devDependencies": {
-    "@types/core-js": "^0.9.46",
-    "@types/globby": "^6.1.0",
-    "@types/node": "^9.4.6",
+    "@types/core-js": "^2.5.0",
+    "@types/globby": "^8.0.0",
+    "@types/node": "^10.5.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "core-js": "^2.5.3",
-    "mocha": "^5.0.1",
-    "prettier": "^1.10.2",
-    "typescript": "^2.7.2"
+    "babel-preset-env": "^1.7.0",
+    "core-js": "^2.5.7",
+    "mocha": "^5.2.0",
+    "prettier": "^1.13.6",
+    "typescript": "^2.9.2"
   },
   "engines": {
     "node": ">=6"
