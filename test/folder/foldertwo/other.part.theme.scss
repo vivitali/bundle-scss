@@ -1,4 +1,6 @@
 @import '../some.theme';
+@import './other/other.theme';
+// @import './other/other.theme';
 
 .other {
  color: red
