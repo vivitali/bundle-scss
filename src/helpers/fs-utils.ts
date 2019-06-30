@@ -17,9 +17,10 @@ export const readSync = (filePath: string) => {
 export const cwDir = () => process.cwd();
 
 /*
-* parse dir destination from des param crete folder if it doesn't exist
-* @param fileDest {string} - result file destination
-*/
+ * parse dir destination from des param crete folder if it doesn't exist
+ * @param fileDest {string} - result file destination
+ */
+
 export const resolveDirDest = (fileDest: string) => {
   const path = mainConst.parseFilePathRegex.exec(fileDest);
 
@@ -36,11 +37,11 @@ export const resolveDirDest = (fileDest: string) => {
 };
 
 /*
-* write result into dest file
-* @param path {string} - output file
-* @param content {string} - content in utf-8 format which should be written into file
-* @return {Promise}
-* */
+ * write result into dest file
+ * @param path {string} - output file
+ * @param content {string} - content in utf-8 format which should be written into file
+ * @return {Promise}
+ * */
 export const writeAsync = (path: string, content: string) => {
   return new Promise((res, rej) => {
     writeFile(resolve(path), content, error => {
@@ -54,24 +55,32 @@ export const writeAsync = (path: string, content: string) => {
 };
 
 /*
-* get File type from string
-* @param fileName {string}
-* @return fileType {string}
-* */
+ * get File type from string
+ * @param fileName {string}
+ * @return fileType {string}
+ * */
 export const fileType = (fileName: string): string =>
   fileName.substring(fileName.lastIndexOf('.') + 1, fileName.length);
 
 /*
-* attach extension to fileName and check if it exist or trow error
-* @param filePath {string} - file path generated from sass `@import`
-* @param fileExtension {string} - file extension
-* @return filePath with appropriate extension `scss` by default
-* */
+ * attach extension to fileName and check if it exist or trow error
+ * @param filePath {string} - file path generated from sass `@import`
+ * @param fileExtension {string} - file extension
+ * @return filePath with appropriate extension `scss` by default
+ * */
 export const defineExtension = (filePath: string, fileExtension: string) => {
   const file = `${filePath}.${fileExtension}`;
 
   if (isFile(file)) {
     return file;
   }
+
+  const last = file.substring(file.lastIndexOf('/') + 1);
+  const _file = file.replace(new RegExp(last), '_' + last);
+
+  if (isFile(_file)) {
+    return _file;
+  }
+
   throw new Error(`No file for module ${filePath}`);
 };

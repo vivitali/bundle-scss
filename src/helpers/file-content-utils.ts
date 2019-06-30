@@ -32,7 +32,12 @@ export const getImports = (
   const regex =
     fileExtension === 'scss' ? /@import ['"]([^'"]+)['"];/g : /@import (\S+)/g;
   let match;
-  while ((match = regex.exec(content)) !== null) {
+  let fileContent = content
+    .split('\n')
+    .filter(line => !/^\/\/|^\/\*|^\*/.test(line.trim()))
+    .join('\n');
+
+  while ((match = regex.exec(fileContent)) !== null) {
     const pathFile = defineExtension(join(baseDir, match[1]), fileExtension);
     imports.push(pathFile);
     getImports(readSync(pathFile), dirname(pathFile), fileExtension, imports);

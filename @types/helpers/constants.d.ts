@@ -3,6 +3,7 @@ export declare const mainConst: {
   scssImportRegex: RegExp;
   sassImportRegex: RegExp;
   parseFilePathRegex: RegExp;
+  commentsLine: RegExp;
   fileType: string;
   packageJsonFile: string;
   bundleConfFile: string;
