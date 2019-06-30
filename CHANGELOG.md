@@ -1,3 +1,9 @@
+# 1.4.1(2019-06-30)
+
+### updates
+
+update dependencies globby to 10.0.0
+
 # 1.4.0(2019-06-29)
 
 ### Bugfix
