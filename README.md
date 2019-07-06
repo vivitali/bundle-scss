@@ -84,7 +84,6 @@ Where
     "dest": "./des/themes.scss",
     "mask": "./src/**/*.theme.scss",
     "sort": ["first-priority", "second-priority", "mixin"] // part of filenames
-    "ignoreComments": true // default false, so comments will
   }
 }
 ```
