@@ -1,3 +1,13 @@
+# 1.4.3(2019-07-06)
+
+### updates
+
+update renovate config
+
+# 1.4.2(2019-07-06)
+
+### updates
+
 # 1.4.1(2019-06-30)
 
 ### updates
