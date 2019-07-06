@@ -1,5 +1,12 @@
 {
   "extends": [
-    "config:base"
-  ]
+    "config:base",
+    "group:all",
+    "schedule:weekly",
+    ":maintainLockFilesWeekly"
+  ],
+  "lockFileMaintenance": {
+    "extends": ["group:all"]
+  },
+  "bumpVersion": "patch"
 }
