@@ -1,6 +1,6 @@
 {
   "name": "bundle-scss",
-  "version": "1.4.8",
+  "version": "1.4.9",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -31,13 +31,13 @@
   "devDependencies": {
     "@types/core-js": "2.5.2",
     "@types/globby": "9.1.0",
-    "@types/node": "12.7.11",
+    "@types/node": "12.11.1",
     "babel-cli": "6.26.0",
     "babel-preset-env": "1.7.0",
-    "core-js": "3.2.1",
+    "core-js": "3.3.2",
     "mocha": "6.2.1",
     "prettier": "1.18.2",
-    "typescript": "3.6.3"
+    "typescript": "3.6.4"
   },
   "engines": {
     "node": ">=6"
