@@ -2,16 +2,16 @@ $red: red;
 $blue: blue;
 
 
-// 
-
-.other {
- color: red
+.one-style {
+    color: $blue
 }
 .footer {
     background: red
 }
 
 
-.one-style {
-    color: $blue
+// 
+
+.other {
+ color: red
 }

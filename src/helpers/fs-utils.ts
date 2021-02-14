@@ -1,5 +1,5 @@
 import { writeFile, statSync, readFileSync, existsSync } from 'fs';
-import { resolve } from 'path';
+import { resolve, parse, join } from 'path';
 import * as mkDir from 'make-dir';
 import { mainConst } from './constants';
 import { logger } from './logger';
@@ -70,13 +70,12 @@ export const fileType = (fileName: string): string =>
  * */
 export const defineExtension = (filePath: string, fileExtension: string) => {
   const file = `${filePath}.${fileExtension}`;
+  const parsedPath = parse(file);
+  const _file = join(parsedPath.dir, `_${parsedPath.base}`);
 
   if (isFile(file)) {
     return file;
   }
-
-  const last = file.substring(file.lastIndexOf('/') + 1);
-  const _file = file.replace(new RegExp(last), '_' + last);
 
   if (isFile(_file)) {
     return _file;

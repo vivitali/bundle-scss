@@ -24,8 +24,14 @@ program
 
 const app = program.opts();
 
-console.log(app);
-
+if (typeof app === 'object') {
+  for (const key in app) {
+    if (Object.prototype.hasOwnProperty.call(app, key)) {
+      const element = app[key];
+      console.log(`${key} ${element}`);
+    }
+  }
+}
 if ((app.mask && app.dest) || app.config) {
   bundleScss(app.mask, app.dest, app.sort, app.config);
 } else {
