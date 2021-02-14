@@ -3,12 +3,12 @@ export declare const removeImports: (
   fileType: string
 ) => string;
 export declare const getUniqueStyleFiles: (
-  files: string[],
+  files: Array<string>,
   fileExtension: string
 ) => string[];
 export declare const getImports: (
   content: string,
   baseDir: string,
   fileExtension: string,
-  imports?: string[]
+  imports?: Array<string>
 ) => string[];

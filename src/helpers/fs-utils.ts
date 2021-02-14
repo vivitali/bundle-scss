@@ -44,7 +44,7 @@ export const resolveDirDest = (fileDest: string) => {
  * */
 export const writeAsync = (path: string, content: string) => {
   return new Promise((res, rej) => {
-    writeFile(resolve(path), content, error => {
+    writeFile(resolve(path), content, (error) => {
       if (error) {
         return rej(error);
       }

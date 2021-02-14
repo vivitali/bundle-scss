@@ -34,9 +34,9 @@ export class Params {
 
   compareOutputInputExtensions(param: IParams): boolean {
     const maskExtension = Array.isArray(param.mask)
-      ? param.mask.map(el => fileType(el))
+      ? param.mask.map((el) => fileType(el))
       : [fileType(param.mask)];
-    return maskExtension.every(el => el === fileType(param.dest));
+    return maskExtension.every((el) => el === fileType(param.dest));
   }
 
   private readJson(filePath: string) {

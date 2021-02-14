@@ -1,1 +1,1 @@
-export declare const logger: (info: string | Error) => any;
+export declare const logger: (info: Error | string) => any;

@@ -15,5 +15,5 @@ export declare class Params {
   compareOutputInputExtensions(param: IParams): boolean;
   private readJson;
   private mergeParam;
-  readonly param: IParams;
+  get param(): IParams;
 }

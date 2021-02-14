@@ -22,7 +22,7 @@ program
   )
   .parse(process.argv);
 
-const app = program.options();
+const app = program.opts();
 
 console.log(app);
 
