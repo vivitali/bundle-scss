@@ -1,7 +1,7 @@
 const path = require("path");
 const exec = require("child_process").exec;
 const {v4: uuid} = require("uuid");
-const del = require("del");
+const rimraf = require('rimraf');
 
 const SANDBOX = "assets"; 
 
@@ -34,7 +34,7 @@ describe('Build Command', () => {
     expect(result.code).toBe(0);
     expect(result.stdout).toContain(`mask assets/scss/scss.scss`);
     expect(result.stdout).toContain(`dest assets/scss/bundled.scss`);
-    del.sync('./assets');
+    rimraf.sync('./assets');
   });
 
   test("should create a prototype project by default", async () => {
@@ -43,6 +43,6 @@ describe('Build Command', () => {
     expect(result.code).toBe(0);
     expect(result.stdout).toContain(`mask ./src/**/*.theme.scss`);
     expect(result.stdout).toContain(`dest ./bundle/themes.scss`);
-    del.sync('./bundle');
+    rimraf.sync('./bundle');
   });
 })
