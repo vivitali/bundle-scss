@@ -35,12 +35,12 @@ export = (
 
   const searchMask = Array.isArray(params.mask) ? params.mask : [params.mask];
 
-  return globby(searchMask).then(paths => {
-    const files = paths.map(file => join(cwDir(), file));
+  return globby(searchMask).then((paths) => {
+    const files = paths.map((file) => join(cwDir(), file));
     const fileExtension = fileType(params.dest);
     const unique = getUniqueStyleFiles(files, fileExtension);
     const sorted = new Sort(params.sort).sort(unique);
-    const buffers = sorted.map(file => {
+    const buffers = sorted.map((file) => {
       return readFileSync(file);
     });
     const buff = Buffer.concat(buffers);
@@ -54,7 +54,7 @@ export = (
           logger(`SAVED SUCCESSFULLY! Please check ${params.dest}`);
           return utf;
         })
-        .catch(reason => {
+        .catch((reason) => {
           logger(`\n${reason}`);
         });
     }

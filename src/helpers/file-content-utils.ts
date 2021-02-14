@@ -13,7 +13,7 @@ export const getUniqueStyleFiles = (
   fileExtension: string
 ) => {
   const imports = files
-    .map(file => {
+    .map((file) => {
       let baseDir = dirname(file);
       return getImports(readSync(file), baseDir, fileExtension);
     })
@@ -34,7 +34,7 @@ export const getImports = (
   let match;
   let fileContent = content
     .split('\n')
-    .filter(line => !/^\/\/|^\/\*|^\*/.test(line.trim()))
+    .filter((line) => !/^\/\/|^\/\*|^\*/.test(line.trim()))
     .join('\n');
 
   while ((match = regex.exec(fileContent)) !== null) {
