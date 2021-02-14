@@ -2,11 +2,11 @@
 
 'use strict';
 
-const app = require('commander');
+const program = require('commander');
 const cfg = require('../../package.json');
 const bundleScss = require('../index');
 
-app
+program
   .version(cfg.version)
   .option('-d, --dest <dest>', 'destination of bundled file')
   .option('-m, --mask <mask>', 'mask for files like ./src/**/*.theme.scss')
@@ -21,6 +21,10 @@ app
     'true or false, try to get params from package.json or bundle-style.json'
   )
   .parse(process.argv);
+
+const app = program.options();
+
+console.log(app);
 
 if ((app.mask && app.dest) || app.config) {
   bundleScss(app.mask, app.dest, app.sort, app.config);
