@@ -1,3 +1,12 @@
+# 1.5.0(2021-02-14)
+
+### updates
+add tests for CLI
+fix tests for concatenations
+miggrate tests on jest
+update dependencies
+fix issue with commander
+
 # 1.4.3(2019-07-06)
 
 ### updates
