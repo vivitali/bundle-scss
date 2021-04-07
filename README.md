@@ -1,6 +1,7 @@
 # bundle-scss (sass is supported!)
 
 [![Build Status](https://travis-ci.org/vasinkevych/bundle-scss.svg?branch=master)](https://travis-ci.org/vasinkevych/bundle-scss)
+[![NPM total downloads](https://img.shields.io/npm/dt/bundle-scss.svg)](https://npmcharts.com/compare/bundle-scss)
 [![npm](https://img.shields.io/npm/dm/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
 [![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
 [![dependencies Status](https://david-dm.org/vasinkevych/bundle-scss.svg)](https://david-dm.org/vasinkevych/bundle-scss)
