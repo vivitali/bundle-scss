@@ -1,0 +1,28 @@
+# language: node_js
+# node_js:
+#   - '15'
+#   - '14'
+#   - '12'
+
+# script: 'npm test'
+# before_deploy:
+#   - npm run build
+# deploy:
+#   provider: npm
+#   email: 'vasinkevych@gmail.com'
+#   api_key: $API_TOKEN
+#   skip_cleanup: true
+#   on:
+#     branch: master
+
+# cache:
+#   npm: true
+# notifications:
+#   webhooks:
+#     urls:
+#       - 'https://www.travisbuddy.com/'
+#     on_success: always
+#     on_failure: always
+#     on_start: never
+#     on_cancel: never
+#     on_error: never
