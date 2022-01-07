@@ -14,6 +14,7 @@
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"./**/*.{ts, js}\"",
     "bin": "tsc -t ES6 --moduleResolution node ./src/bin/bundle-scss.ts --outFile ./dist/bin/bundle-scss",
     "build": "tsc -p . --newLine lf && npm run bin && npm run prettier",
+    "ci": "tsc -p . --newLine lf && npm run bin && npm run prettier",
     "test": "jest"
   },
   "bin": {
