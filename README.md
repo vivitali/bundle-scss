@@ -4,8 +4,6 @@
 [![NPM total downloads](https://img.shields.io/npm/dt/bundle-scss.svg)](https://npmcharts.com/compare/bundle-scss)
 [![npm](https://img.shields.io/npm/dm/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
 [![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
-[![dependencies Status](https://david-dm.org/vasinkevych/bundle-scss.svg)](https://david-dm.org/vasinkevych/bundle-scss)
-[![devDependencies Status](https://david-dm.org/vasinkevych/bundle-scss/dev-status.svg)](https://david-dm.org/vasinkevych/bundle-scss?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/vasinkevych/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vasinkevych/bundle-scss?targetFile=package.json)
 
 ##
@@ -19,7 +17,7 @@ Or you may specify your own priority.
 If you want to use `bundle-scss`
 
 ```sh
-$ npm i -D bundle-scss
+npm i -D bundle-scss
 ```
 
 ## CLI Usage
