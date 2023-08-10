@@ -103,9 +103,9 @@ Use the same config with `sass` file extesions instead of `scss`
 
 ## Like it?
 
-:star: [this repo](https://github.com/vasinkevych/tailwindcss-react-datepicker)
-[Buy me a :coffee: :coffee: :coffee:](https://www.buymeacoffee.com/vaviQ)
-or become a sponsor [Github Sponsors](https://github.com/sponsors/vasinkevych)
+- :star: [this repo](https://github.com/vasinkevych/tailwindcss-react-datepicker)
+- Buy me a :coffee: :coffee: :coffee: on [buymeacoffee](https://www.buymeacoffee.com/vaviQ)
+- or become a sponsor [Github Sponsors](https://github.com/sponsors/vasinkevych)
 
 ## Other
 
