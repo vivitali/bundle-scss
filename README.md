@@ -1,10 +1,8 @@
 # bundle-scss (sass is supported!)
-
-[![Build Status](https://travis-ci.org/vasinkevych/bundle-scss.svg?branch=master)](https://travis-ci.org/vasinkevych/bundle-scss)
 [![NPM total downloads](https://img.shields.io/npm/dt/bundle-scss.svg)](https://npmcharts.com/compare/bundle-scss)
 [![npm](https://img.shields.io/npm/dm/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
 [![NPM version](http://img.shields.io/npm/v/bundle-scss.svg)](https://www.npmjs.com/package/bundle-scss)
-[![Known Vulnerabilities](https://snyk.io/test/github/vasinkevych/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vasinkevych/bundle-scss?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/videmig/bundle-scss/badge.svg?targetFile=package.json)](https://snyk.io/test/github/videmig/bundle-scss?targetFile=package.json)
 
 ##
 
@@ -103,14 +101,14 @@ Use the same config with `sass` file extesions instead of `scss`
 
 ## Like it?
 
-- :star: [this repo](https://github.com/vasinkevych/tailwindcss-react-datepicker)
+- :star: [this repo](https://github.com/videmig/tailwindcss-react-datepicker)
 - Buy me a :coffee: :coffee: :coffee: on [buymeacoffee](https://www.buymeacoffee.com/vaviQ)
-- or become a sponsor [Github Sponsors](https://github.com/sponsors/vasinkevych)
+- or become a sponsor [Github Sponsors](https://github.com/sponsors/videmig)
 
 ## Other
 
-[Next Steps](https://github.com/vasinkevych/bundle-scss/blob/master/ROADMAP.md)  
-[CHANGELOG](https://github.com/vasinkevych/bundle-scss/blob/master/CHANGELOG.md)
+[Next Steps](https://github.com/videmig/bundle-scss/blob/master/ROADMAP.md)  
+[CHANGELOG](https://github.com/videmig/bundle-scss/blob/master/CHANGELOG.md)
 
 ## License
 
