@@ -1,14 +1,14 @@
 {
   "name": "bundle-scss",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Bundling SCSS files to one bundled file.",
   "license": "MIT",
   "main": "dist/index.js",
-  "author": "Vitalii (https://github.com/videmig)",
-  "bugs": "https://github.com/videmig/bundle-scss/issues",
+  "author": "Vitalii (https://github.com/vivitali)",
+  "bugs": "https://github.com/vivitali/bundle-scss/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/videmig/bundle-scss"
+    "url": "https://github.com/vivitali/bundle-scss"
   },
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"./**/*.{ts, js}\"",
